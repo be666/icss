@@ -1,0 +1,21 @@
+{
+  "main": [
+    {
+      "main": {
+        "js": "src/main.js",
+        "template": "templates/default.ejs",
+        "title": "",
+        "keywords": "",
+        "description": ""
+      }
+    },
+    { "index": {
+        "js": "src/doc.js",
+        "template": "templates/default.ejs",
+        "title": "",
+        "keywords": "",
+        "description": ""
+      }
+    }
+  ]
+}
