@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Hello from './components/home'
 
 export default {
   components: {

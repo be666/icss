@@ -1,10 +1,55 @@
-import Vue from 'vue'
-import App from './App'
+let {Vue} = require("./common");
+let VueRouter = require('vue-router');
+//main
 
-require('./less/main.less');
+Vue.use(VueRouter);
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: {App}
+let App = Vue.extend({
+  events: {
+    link: function (pathName, params) {
+      router.go({
+        name: pathName,
+        params: params || {}
+      })
+    }
+  }
 });
+
+let router = new VueRouter();
+router.map({
+  '/': {
+    name: "root",
+    component: require("./layout/root.vue"),
+    subRoutes: {
+      "/": {
+        component: require("./layout/app.vue"),
+        subRoutes: {
+          "home": {
+            name: "home",
+            component: require("./components/home.vue")
+          }
+        }
+      }
+    }
+  }
+});
+
+router.redirect({
+  "/": "/home"
+});
+
+router.beforeEach(function (transition) {
+  let $this = transition.to.router.app;
+  return transition.next();
+  if ($this.$tools.inArray($this.$auth.ignore, transition.to.path)) {
+    transition.next()
+  } else {
+    $this.$auth.valid($this, function () {
+      transition.next();
+    }, function () {
+      transition.redirect("/login")
+    });
+  }
+});
+
+router.start(App, 'body');
