@@ -60,10 +60,10 @@
       transform: translate(41px);
     }
 
-    .i-char-s-s {
-      /*stroke-dasharray: 200%;*/
-      /*stroke-dashoffset: 200%;*/
-      /*animation: i-css-logo-path 2s infinite linear forwards;*/
+    .i-char-s, .i-char-s-s {
+      stroke-dasharray: 200%;
+      stroke-dashoffset: 200%;
+      animation: i-css-logo-path 2s infinite linear forwards;
     }
   }
 </style>
