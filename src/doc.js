@@ -1,8 +1,10 @@
 let {Vue} = require("./common");
 let VueRouter = require('vue-router');
 //main
+let icss=require('./less/main.less');
 
 Vue.use(VueRouter);
+
 
 let App = Vue.extend({
   events: {
@@ -26,7 +28,11 @@ router.map({
         subRoutes: {
           "home": {
             name: "home",
-            component: require("./components/home.vue")
+            component: require("./pages/home.vue")
+          },
+          "form": {
+            name: "form",
+            component: require("./pages/form.vue")
           }
         }
       }

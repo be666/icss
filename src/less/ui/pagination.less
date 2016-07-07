@@ -1,0 +1,27 @@
+ul.i-pagination {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  a {
+    border: 1px solid @color-back;
+    color: @font-color-pri;
+    margin: 0 0.2rem;
+    line-height: @hl-md;
+    font-size: @fs-md;
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+  }
+  li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  li.i-active {
+    a {
+      background: @color-pri;
+      color: @color-bg;
+      border-color: @color-bg;
+    }
+  }
+}

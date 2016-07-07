@@ -1,0 +1,41 @@
+table {
+  min-width: 100%;
+  border: 1px solid @color-border;
+
+  td, th {
+    line-height: @hl-md;
+    font-size: @fs-md;
+    .i-warp-md-al;
+  }
+  thead {
+    tr {
+      border: 1px solid @color-border;
+      th {
+        border: 0 solid @color-border;
+      }
+      th:not(:first-child) {
+        border-left-width: 1px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border: 0 solid @color-border;
+      border-bottom-width: 1px;
+      td {
+        border: 0 solid @color-border;
+      }
+      td:not(:first-child) {
+        border-left-width: 1px;
+      }
+    }
+  }
+  tfoot {
+    tr {
+      td {
+        text-align: right;
+      }
+    }
+  }
+}
+

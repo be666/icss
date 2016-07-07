@@ -1,0 +1,73 @@
+.i-row {
+  width: 100%;
+  .i-cf;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  [class^=i-col-]{
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  div[class^=i-col-] {
+    padding: 1rem;
+  }
+  .i-col-1 {
+    width: 8%;
+  }
+
+  .i-col-2 {
+    width: 16%;
+  }
+
+  .i-col-3 {
+    width: 25%;
+  }
+
+  .i-col-4 {
+    width: 33%;
+  }
+
+  .i-col-5 {
+    width: 41%;
+  }
+
+  .i-col-6 {
+    width: 50%;
+  }
+
+  .i-col-7 {
+    width: 58%;
+  }
+
+  .i-col-8 {
+    width: 66%;
+  }
+
+  .i-col-9 {
+    width: 75%;
+  }
+
+  .i-col-10 {
+    width: 83%;
+  }
+
+  .i-col-11 {
+    width: 91.6%;
+  }
+
+  .i-col-12 {
+    width: 100%;
+  }
+
+  .i-col-fill {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+}
+
+.i-row.i-row-keep {
+  flex-wrap: nowrap;
+}

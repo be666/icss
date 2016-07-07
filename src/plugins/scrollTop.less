@@ -1,0 +1,114 @@
+
+@keyframes i_scroll_top_hover {
+  0% {
+    transform: translateX(-17px) translateY(-188px)
+  }
+
+  50% {
+    transform: translateX(-17px) translateY(-198px)
+  }
+
+  100% {
+    transform: translateX(-17px) translateY(-188px)
+  }
+}
+
+@keyframes i_scroll_top_exec {
+  from {
+    display: block;
+    transform: translateX(-17px) translateY(-188px)
+  }
+
+  to {
+    display: block;
+    transform: translateX(-17px) translateY(-110vh)
+  }
+}
+
+.i_scroll_top {
+  position: fixed;
+  bottom: 30px;
+  right: 138px;
+  display: none;
+  height: 144px;
+  width: 32px;
+  color: #333333;
+  .i_s_t_fly {
+    height: 68px;
+    width: 32px;
+    //background: url(./images/huojian.png);
+    transform: translateX(-8px) translateY(-188px);
+    z-index: 500;
+    display: none;
+  }
+  &:hover {
+    .i_s_t_fly {
+      display: block;
+    }
+  }
+
+  .i_s_t_mobile {
+    height: 64px;
+    width: 32px;
+    background-color: #3ecda6;
+    //background-image: url(./images/shouji.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    border-bottom: 1px solid #119877;
+    border-radius: 3px 3px 0 0;
+    .i_s_t_code {
+      //background: url(./images/erweima.png) center no-repeat;
+      width: 127px;
+      height: 127px;
+      display: none;
+    }
+    &:hover {
+      .i_s_t_code {
+        display: block;
+        transform: translateX(36px);
+      }
+    }
+  }
+
+  .i_s_t_text {
+    height: 80px;
+    background: #3ecda6;
+    width: 32px;
+    padding: 0 8px;
+    color: #FFFFFF;
+    line-height: 18px;
+    border-radius: 0 0 3px 3px;
+    &:hover {
+      .i_s_t_fly {
+        width: 46px;
+        //background: url(./images/huojian_click.png);
+        animation: i_scroll_top_hover 1s infinite;
+      }
+
+      .i_s_t_fly.active {
+        width: 46px;
+        //background: url(./images/huojian_click.png);
+        animation: i_scroll_top_exec 1s cubic-bezier(0.58, 0.04, 0.69, 1.25) infinite;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1500px) {
+  .i_scroll_top {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 1500px) {
+  .i_scroll_top {
+    display: block;
+    bottom: 0;
+    right: 0;
+  }
+}
+

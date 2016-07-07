@@ -1,0 +1,31 @@
+nav {
+  background: @color-bg;
+  border-radius: @border-radius;
+  border: 1px solid @color-border;
+  ul {
+    li {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid @body-bg;
+      &:hover, &.i-active {
+        background: @color-pri-hover;
+        color: @color-bg;
+      }
+    }
+    li:last-child {
+      border-bottom-width: 0;
+      &:hover {
+        border-radius: 0 0 @border-radius @border-radius;
+      }
+    }
+
+    li:first-child {
+      &:hover, &.i-active {
+        border-radius: @border-radius @border-radius 0 0;
+      }
+    }
+  }
+}
+
+nav.i-slide {
+
+}

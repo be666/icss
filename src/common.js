@@ -1,7 +1,7 @@
 'use strict';
 let Vue = require('vue');
 let VueResource = require('vue-resource');
-let VueViewComponents = require('vue-view-components').default;
+let VueViewComponents = require('./components/index.js');
 Vue.config.debug = true;
 Vue.use(function (vue) {
   vue.prototype.$tools = require('./tools');
