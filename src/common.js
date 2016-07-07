@@ -1,6 +1,5 @@
 'use strict';
 let Vue = require('vue');
-let VueResource = require('vue-resource');
 let VueViewComponents = require('./components/index.js');
 Vue.config.debug = true;
 Vue.use(function (vue) {
@@ -13,7 +12,6 @@ Vue.use(function (vue) {
 
 
 //layout
-Vue.use(VueResource);
 Vue.use(VueViewComponents());
 //component
 

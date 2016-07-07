@@ -10,6 +10,7 @@ let c_select_multi = require("./select-multi.vue");
 let c_select_single = require("./select-single.vue");
 let c_switch_toggle = require("./switch-toggle.vue");
 let c_table = require("./table.vue");
+let c_table_server = require("./table-server.vue");
 let c_user_avatar = require("./user-avatar.vue");
 let dialog = require('../plugins/dialog.js');
 let scrollTop = require('../plugins/scrollTop.js');
@@ -25,6 +26,7 @@ let componentMap = {
   select_single: c_select_single,
   switch_toggle: c_switch_toggle,
   table: c_table,
+  table_server: c_table_server,
   user_avatar: c_user_avatar
 };
 function install(option) {

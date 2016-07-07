@@ -44,18 +44,15 @@
 <script>
   export default {
     name: 'i_table',
-    beforeCompile() {
-      this.optionList = this.optionList || [];
-    },
     props: {
       pk: {
-        type: 'String',
+        type: String,
         default() {
           return 'id';
         }
       },
-      titleList: 'Array',
-      dataList: 'Array',
+      titleList: Array,
+      dataList: Array,
       pageMaker: {
         default(){
           return {
@@ -64,30 +61,24 @@
             totalPage: 0,
             pages: [],
             rowCount: 0,
-            sizes: 0
+            totalCount: 0
           };
         }
       },
       checkboxFlag: {
-        type: 'Boolean',
+        type: Boolean,
         default(){
           return true;
         }
       },
       selected: {
-        type: 'Array',
-        default(){
-          return [];
-        }
-      },
-      optionList: {
-        type: 'Array',
+        type: Array,
         default(){
           return [];
         }
       },
       pid: {
-        type: 'String',
+        type: String,
         default() {
           return this.$tools.getUUid();
         }

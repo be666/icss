@@ -1,16 +1,18 @@
-<template>
+<template xmlns:v-on="http://www.w3.org/1999/xhtml">
   <div class="i-row i-row-keep">
     <div class="i-col-3">
       <nav>
         <ul>
           <li>
-            <a>
-              layout
+            <a v-on:click="pathTo('table-server')"
+            >
+              table-server
             </a>
           </li>
           <li>
-            <a>
-              ui
+            <a v-on:click="pathTo('form')"
+            >
+              form
             </a>
           </li>
         </ul>
@@ -41,6 +43,11 @@
         if (to.matched && to.matched[1]) {
           this.moduleName = transition.to.matched[1].handler.name;
         }
+      }
+    },
+    methods:{
+      pathTo(path){
+        this.$dispatch("link", path)
       }
     }
   }

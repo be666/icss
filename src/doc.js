@@ -1,10 +1,12 @@
 let {Vue} = require("./common");
+let VueResource = require('vue-resource');
+
 let VueRouter = require('vue-router');
 //main
-let icss=require('./less/main.less');
+let icss = require('./less/main.less');
 
 Vue.use(VueRouter);
-
+Vue.use(VueResource);
 
 let App = Vue.extend({
   events: {
@@ -30,6 +32,10 @@ router.map({
             name: "home",
             component: require("./pages/home.vue")
           },
+          "table-server": {
+            name: "table-server",
+            component: require("./pages/server-table.vue")
+          },
           "form": {
             name: "form",
             component: require("./pages/form.vue")
@@ -48,7 +54,7 @@ router.beforeEach(function (transition) {
   let $this = transition.to.router.app;
   return transition.next();
   if ($this.$tools.inArray($this.$auth.ignore, transition.to.path)) {
-    transition.next()
+      transition.next()
   } else {
     $this.$auth.valid($this, function () {
       transition.next();
