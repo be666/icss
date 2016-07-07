@@ -39,6 +39,10 @@ router.map({
           "form": {
             name: "form",
             component: require("./pages/form.vue")
+          },
+          "avatar": {
+            name: "avatar",
+            component: require("./pages/avatar.vue")
           }
         }
       }

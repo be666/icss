@@ -108,6 +108,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    line-height: 0;
   }
 
   .img-warp:after {

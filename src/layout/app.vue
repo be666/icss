@@ -1,18 +1,38 @@
-<template xmlns:v-on="http://www.w3.org/1999/xhtml">
+<template xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div class="i-row i-row-keep">
     <div class="i-col-3">
       <nav>
         <ul>
-          <li>
-            <a v-on:click="pathTo('table-server')"
-            >
+          <li
+            v-bind:class="activePath('home')"
+            v-on:click="pathTo('home')"
+          >
+            <a>
+              home
+            </a>
+          </li>
+          <li
+            v-bind:class="activePath('table-server')"
+            v-on:click="pathTo('table-server')"
+          >
+            <a>
               table-server
             </a>
           </li>
-          <li>
-            <a v-on:click="pathTo('form')"
-            >
+          <li
+            v-bind:class="activePath('form')"
+            v-on:click="pathTo('form')"
+          >
+            <a>
               form
+            </a>
+          </li>
+          <li
+            v-bind:class="activePath('avatar')"
+            v-on:click="pathTo('avatar')"
+          >
+            <a>
+              avatar
             </a>
           </li>
         </ul>
@@ -45,9 +65,12 @@
         }
       }
     },
-    methods:{
+    methods: {
       pathTo(path){
         this.$dispatch("link", path)
+      },
+      activePath(path){
+        return path == this.$route.name ? 'i-active' : '';
       }
     }
   }
