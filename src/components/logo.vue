@@ -33,6 +33,15 @@
     }
   }
 
+  @keyframes i-css-logo-poi {
+    0% {
+      transform: translate(0);;
+    }
+    100% {
+      transform: translate(50px);;
+    }
+  }
+
   .i-css-logo {
     path {
       fill: none;
@@ -64,6 +73,10 @@
       stroke-dasharray: 200%;
       stroke-dashoffset: 200%;
       animation: i-css-logo-path 2s infinite linear forwards;
+    }
+
+    .i-char-poi {
+      animation: i-css-logo-poi 2s infinite linear forwards;
     }
   }
 </style>
