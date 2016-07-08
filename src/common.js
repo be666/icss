@@ -1,6 +1,6 @@
 'use strict';
 let Vue = require('vue');
-let VueViewComponents = require('./components/index.js');
+let VueViewComponents = require('vue-view-components');
 
 //layout
 Vue.use(VueViewComponents());
