@@ -13,13 +13,13 @@
   "dependencies": {
     "babel-runtime": "^6.0.0",
     "less": "^2.7.1",
-    "less-loader": "^2.2.3",
+    "less-loader": "^2.2.3"
+  },
+  "devDependencies": {
     "vue": "^1.0.21",
     "vue-resource": "^0.1.17",
     "vue-router": "^0.7.7",
-    "vue-view-components": "0.0.5"
-  },
-  "devDependencies": {
+    "vue-view-components": "0.0.7",
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",

@@ -4,12 +4,6 @@
       sample
     </div>
     <div class="i-panel-body">
-      <div class="i-btn-g">
-        <button type="button" v-on:click='pathTo("form")'>
-          new
-        </button>
-      </div>
-      <br>
       <i_table_server
         data-url="/static/data-{pageIndex}-{pageSize}.json"
         count-url="/static/data-count.json"
