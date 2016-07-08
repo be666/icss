@@ -1,42 +1,13 @@
 <template xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div class="i-row i-row-keep">
     <div class="i-col-3">
-      <nav>
-        <ul>
-          <li
-            v-bind:class="activePath('home')"
-            v-on:click="pathTo('home')"
-          >
-            <a>
-              home
-            </a>
-          </li>
-          <li
-            v-bind:class="activePath('table-server')"
-            v-on:click="pathTo('table-server')"
-          >
-            <a>
-              table-server
-            </a>
-          </li>
-          <li
-            v-bind:class="activePath('form')"
-            v-on:click="pathTo('form')"
-          >
-            <a>
-              form
-            </a>
-          </li>
-          <li
-            v-bind:class="activePath('avatar')"
-            v-on:click="pathTo('avatar')"
-          >
-            <a>
-              avatar
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <i_navigation
+        id="nid"
+        text="name"
+        v-on:nav-click="navClick"
+        v-ref:navigation
+      >
+      </i_navigation>
     </div>
     <div class="i-col-fill">
       <router-view>
@@ -54,7 +25,31 @@
     },
     data () {
       return {
+        navList: [
+          {
+            nid: "home",
+            name: "home"
+          },
+          {
+            nid: "form",
+            name: "form"
+          },
+          {
+            nid: "table-server",
+            name: "table-server"
+          },
+          {
+            nid: "avatar",
+            name: "avatar"
+          }
+        ],
         moduleName: this.moduleName
+      }
+    },
+    ready(){
+      this.$refs.navigation.navList = this.navList;
+      this.$refs.navigation.selected = {
+        nid: this.$route.name
       }
     },
     route: {
@@ -71,6 +66,9 @@
       },
       activePath(path){
         return path == this.$route.name ? 'i-active' : '';
+      },
+      navClick(name){
+        this.$dispatch("link", name)
       }
     }
   }

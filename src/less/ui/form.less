@@ -7,11 +7,14 @@ form {
   }
   label {
     box-sizing: border-box;
-    text-indent: 1rem;
+    text-indent: @text-indent;
     &.i-text-al-r {
-      padding-right: 1rem;
+      padding-right: @text-indent;
     }
   }
 
+  .i-row {
+    padding: @pd-sm 0;
+  }
 }
 

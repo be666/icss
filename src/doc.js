@@ -55,17 +55,7 @@ router.redirect({
 });
 
 router.beforeEach(function (transition) {
-  let $this = transition.to.router.app;
-  return transition.next();
-  if ($this.$tools.inArray($this.$auth.ignore, transition.to.path)) {
-      transition.next()
-  } else {
-    $this.$auth.valid($this, function () {
-      transition.next();
-    }, function () {
-      transition.redirect("/login")
-    });
-  }
+  transition.next();
 });
 
 router.start(App, 'body');

@@ -1,16 +1,15 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
-  <div class="am-dropdown" v-bind:class="{'am-active':active}">
-    <button class="am-btn am-dropdown-toggle" type="button"
+  <div class="i-select-single" v-bind:class="[active?'i-active':'']">
+    <button type="button"
             v-on:click="toggle"
     >
-      {{selected&&selected[id]?selected[text]:unSelected[text]}}
-      <span class="am-icon-caret-down"></span>
+      {{showText()}}
+      <span></span>
     </button>
-    <ul class="am-dropdown-content" v-if="itemList.length | gt0">
+    <ul v-if="itemList.length > 0">
       <template v-for="item in itemList">
         <li
           v-on:click="clicked(item[id],item[text])"
-          v-bind:class="[equal(item[id],selected[id])?'am-active':'']"
         >
           <a>
             {{item[text]}}
@@ -26,7 +25,7 @@
     props: {
       pid: {
         default(){
-          return this.$tools.getUUid()
+          return this.$getUUID(5)
         }
       },
       id: {
@@ -77,6 +76,14 @@
       },
       equal (v1, v2) {
         return v1 == v2;
+      },
+      showText(){
+        if (this.selected) {
+          if (typeof this.selected[this.id] != 'undefined') {
+            return this.selected[this.text]
+          }
+        }
+        return this.unSelected[this.text]
       }
     }
   };

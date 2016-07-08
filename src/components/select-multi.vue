@@ -1,5 +1,5 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
-  <div class="i-multi">
+  <div class="i-select-multi">
     <ul v-if="itemList.length">
       <template v-for="item in itemList">
         <li
@@ -14,51 +14,45 @@
     </ul>
   </div>
 </template>
-<style>
-  .i-multi {
-    background-color: #fff;
-    border: 1px solid #ddd;
-  }
+<style lang="less">
 
-  .i-multi ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .i-multi li {
-    border-top: 1px solid #ddd;
-  }
-
-  .i-multi li:first-child {
-    border-top-width: 0;
-  }
-
-  .i-multi a {
-    display: block;
-    padding: 6px 20px;
-    font-weight: 400;
-    color: #333;
-    white-space: nowrap
-  }
-
-  .i-multi .i-active a {
-    color: #fff;
-    text-decoration: none;
-    outline: 0;
-    background-color: #0e90d2
-  }
 </style>
 <script>
+  let inArray = function (arr, el, comp) {
+    arr = arr || [];
+    for (var i = 0, k = arr.length; i < k; i++) {
+      if (typeof comp == "function") {
+        if (comp(arr[i], el)) {
+          return true;
+        }
+      }
+      else if (el == arr[i]) {
+        return true;
+      }
+    }
+  };
   export default {
     name: "i_select_multi",
-    props: ['id', 'text', 'selected', 'itemList'],
-    data() {
-      return {
-        id: this.id || "id",
-        text: this.text || "text",
-        selected: this.selected,
-        itemList: this.itemList
+    props:{
+      id: {
+        default(){
+          return 'id'
+        }
+      },
+      text: {
+        default(){
+          return 'text'
+        }
+      },
+      selected: {
+        default(){
+          return {}
+        }
+      },
+      itemList: {
+        default(){
+          return []
+        }
       }
     },
     methods: {
@@ -68,7 +62,7 @@
           $this.selected = [];
         }
         var $selected = this.selected;
-        if ($this.$tools.inArray($selected, id)) {
+        if (inArray($selected, id)) {
           for (var i = 0; i < $selected.length; i++) {
             var $s = $selected[i];
             if ($s == id) {
@@ -81,7 +75,7 @@
         }
       },
       isSelected(id) {
-        return this.$tools.inArray(this.selected, id);
+        return inArray(this.selected, id);
       }
     }
   };

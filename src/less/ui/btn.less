@@ -1,11 +1,10 @@
 button {
   border: none;
   text-align: center;
-  padding: 0.2rem 1rem;
   text-decoration: none;
   display: inline-block;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: @fs-md;
+  line-height: @hl-md;
   background: @color-pri;
   color: @color-bg;
   &:hover {
@@ -26,11 +25,11 @@ button {
   }
 
   button:first-child {
-    border-bottom-left-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: @border-radius;
+    border-top-left-radius: @border-radius;
   }
   button:last-child {
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: @border-radius;
+    border-top-right-radius: @border-radius;
   }
 }

@@ -13,7 +13,7 @@
         </template>
       </tr>
       </thead>
-      <tbody v-if="dataList && dataList.length | gt0 ">
+      <tbody v-if="dataList && dataList.length>0 ">
       <template v-for="data in dataList">
         <tr v-on:click="rowClick($event,data)">
           <td v-if='checkboxFlag'>
@@ -80,7 +80,7 @@
       pid: {
         type: String,
         default() {
-          return this.$tools.getUUid();
+          return this.$getUUID(5);
         }
       }
     },

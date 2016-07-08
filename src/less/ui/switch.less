@@ -1,0 +1,50 @@
+.i_switch {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  height: @hl-md;
+  line-height: @hl-md;
+  border-color: #ffffff;
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  overflow: hidden;
+  .i_switch_left, .i_switch_right {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    text-align: center;
+  }
+  .i_switch_left {
+    left: 0;
+    color: #ffffff;
+    background-color: @color-pri;
+    background-image: linear-gradient(to bottom, @color-pri, @color-pri);
+    text-shadow: 0 -1px #ffffff;
+    border-right: 1px solid transparent;
+    transition: left 0.5s;
+  }
+  .i_switch_right {
+    left: 100%;
+    color: #000000;;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(to bottom, #e6e6e6, #ffffff);
+    text-shadow: 0 -1px 0 #000000;
+    border-left: 1px solid #cccccc;
+    transition: left 0.5s;
+  }
+
+  &.i_switch_off {
+    .i_switch_left {
+      left: -50%;
+    }
+    .i_switch_right {
+      left: 50%;
+    }
+  }
+}

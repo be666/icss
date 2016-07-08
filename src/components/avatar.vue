@@ -215,7 +215,7 @@
       sId: {
         type: 'String',
         default(){
-          return this.$tools.getEUID(5);
+          return this.$getUUID(5);
         }
       },
       imgUrl: {

@@ -5,6 +5,7 @@ let c_avatar_file = require("./avatar-file.vue");
 let c_checkbox = require("./checkbox.vue");
 let c_pagination = require("./pagination.vue");
 let c_radio = require("./radio.vue");
+let c_navigation = require("./navigation.vue");
 let c_search = require("./search.vue");
 let c_select_multi = require("./select-multi.vue");
 let c_select_single = require("./select-single.vue");
@@ -20,6 +21,7 @@ let componentMap = {
   avatar_file: c_avatar_file,
   checkbox: c_checkbox,
   pagination: c_pagination,
+  navigation: c_navigation,
   radio: c_radio,
   search: c_search,
   select_multi: c_select_multi,
@@ -48,29 +50,31 @@ function install(option) {
         }
       },
       $getUUID: {
-        get: function (radix, len) {
-          var chars = 'abcdefghijklmnopqrstuvwxyz'.split('');
-          var uuid = [], i;
-          radix = radix || chars.length;
-          if (len) {
-            // Compact form
-            for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random() * radix];
-          } else {
-            // rfc4122, version 4 form
-            var r;
-            // rfc4122 requires these characters
-            uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
-            uuid[14] = '4';
-            // Fill in random data.  At i==19 set the high bits of clock sequence as
-            // per rfc4122, sec. 4.1.5
-            for (i = 0; i < 36; i++) {
-              if (!uuid[i]) {
-                r = 0 | Math.random() * 16;
-                uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+        get: function () {
+          return function (radix, len) {
+            var chars = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            var uuid = [], i;
+            radix = radix || chars.length;
+            if (len) {
+              // Compact form
+              for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random() * radix];
+            } else {
+              // rfc4122, version 4 form
+              var r;
+              // rfc4122 requires these characters
+              uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+              uuid[14] = '4';
+              // Fill in random data.  At i==19 set the high bits of clock sequence as
+              // per rfc4122, sec. 4.1.5
+              for (i = 0; i < 36; i++) {
+                if (!uuid[i]) {
+                  r = 0 | Math.random() * 16;
+                  uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+                }
               }
             }
+            return uuid.join('');
           }
-          return uuid.join('');
         }
       }
     });

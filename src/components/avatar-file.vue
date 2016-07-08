@@ -84,7 +84,7 @@
       },
       formId: {
         default(){
-          return this.$tools.getEUID();
+          return this.$getUUID(5);
         }
       },
       showSize: {

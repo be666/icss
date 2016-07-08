@@ -59,7 +59,7 @@
       "formId": {
         type: String,
         default(){
-          return this.$tools.getUUid()
+          return this.$getUUID(5)
         }
       }
     },

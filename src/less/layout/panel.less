@@ -1,14 +1,15 @@
+@hl-panel:@hl-md;
 .i-panel {
   width: 100%;
   border: 1px solid @color-border;
-  line-height: 2rem;
+  line-height: @hl-panel;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
   min-height: 100vh;
   align-items: stretch;
-  border-radius: 0.5rem;
+  border-radius: @border-radius;
   overflow: hidden;
   .i-panel-header, .i-panel-footer {
     flex-grow: 0;
@@ -20,7 +21,7 @@
   }
 
   .i-panel-header {
-    min-height: 2rem;
+    min-height: @hl-panel;
     background: @color-bg;
   }
   .i-panel-body {
@@ -29,8 +30,7 @@
 
   .i-panel-footer {
     border-top: 1px solid @color-border;
-    min-height: 2rem;
-
+    min-height: 2 @hl-panel;
   }
 
   .i-panel-header, .i-panel-footer {

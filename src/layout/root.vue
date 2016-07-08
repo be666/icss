@@ -16,7 +16,6 @@
     },
     route: {
       data (transition) {
-        this.userInfo = this.$tools.getUserInfo();
       }
     }
   }

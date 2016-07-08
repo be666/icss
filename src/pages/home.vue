@@ -52,12 +52,12 @@
         {
           id: 'name',
           text: '姓名',
-          width: '50%'
+          width: '40%'
         },
         {
           id: 'sex',
           text: '性别',
-          width: '10%',
+          width: '20%',
           render(el, attr, index){
             return self.sexMap[attr]
           }
