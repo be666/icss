@@ -1,4 +1,4 @@
-@hl-panel:@hl-md;
+@hl-panel: @hl-md;
 .i-panel {
   width: 100%;
   border: 1px solid @color-border;
@@ -24,6 +24,7 @@
     min-height: @hl-panel;
     background: @color-bg;
   }
+
   .i-panel-body {
     border-top: 1px solid @color-border;
   }
@@ -35,6 +36,16 @@
 
   .i-panel-header, .i-panel-footer {
     .i-warp-md-al;
+  }
+
+  .i-panel-header {
+    font-size: @fs-lg;
+    line-height: 1.5;
+  }
+
+  .i-panel-tool {
+    border-top: 1px solid @color-border;
+    padding: @mg-sm @pd-md;
   }
 
   .i-panel-body {

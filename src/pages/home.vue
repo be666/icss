@@ -3,13 +3,15 @@
     <div class="i-panel-header">
       sample
     </div>
+    <div class="i-panel-tool i-btn-g">
+      <button type="button" v-on:click='pathTo("form")'>
+        new
+      </button>
+      <button type="button" v-on:click='pathTo("form")'>
+        other
+      </button>
+    </div>
     <div class="i-panel-body">
-      <div class="i-btn-g">
-        <button type="button" v-on:click='pathTo("form")'>
-          new
-        </button>
-      </div>
-      <br>
       <i_table
         v-ref:table
       >
