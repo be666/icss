@@ -5,83 +5,86 @@
     </div>
     <div class="i-panel-body">
       <form class="i-form">
-        <div class="i-row">
-          <label class="i-col-2 i-text-al-r">
-            姓名
-          </label>
-          <input type="text" class="i-col-4">
-          <label class="i-col-2 i-text-al-r">
-            性别
-          </label>
-          <div class="i-col-4 i-warp-none-al">
-            <i_select_single
-              id="sid"
-              text="name"
-              v-ref:select_single
-            >
-            </i_select_single>
+        <fieldset>
+          <legend>form sample</legend>
+          <div class="i-row">
+            <label class="i-col-2 i-text-al-r">
+              姓名
+            </label>
+            <input type="text" class="i-col-4">
+            <label class="i-col-2 i-text-al-r">
+              性别
+            </label>
+            <div class="i-col-4 i-warp-none-al">
+              <i_select_single
+                id="sid"
+                text="name"
+                v-ref:select_single
+              >
+              </i_select_single>
+            </div>
           </div>
-        </div>
-        <div class="i-row">
-          <label class="i-col-2 i-text-al-r">
-            角色
-          </label>
-          <div class="i-col-4 i-warp-none-al">
-            <i_select_multi
-              id="rid"
-              text="name"
-              v-ref:select_multi
-            >
-            </i_select_multi>
+          <div class="i-row">
+            <label class="i-col-2 i-text-al-r">
+              角色
+            </label>
+            <div class="i-col-4 i-warp-none-al">
+              <i_select_multi
+                id="rid"
+                text="name"
+                v-ref:select_multi
+              >
+              </i_select_multi>
+            </div>
           </div>
-        </div>
-        <div class="i-row">
-          <label class="i-col-2 i-text-al-r">
-            权限
-          </label>
-          <div class="i-col-10 i-warp-none-al i-row">
-            <i_checkbox
-              id="rid"
-              class-name="i-col-4  i-warp-md-al"
-              text="name"
-              v-ref:checkbox
-            >
+          <div class="i-row">
+            <label class="i-col-2 i-text-al-r">
+              权限
+            </label>
+            <div class="i-col-10 i-warp-none-al i-row">
+              <i_checkbox
+                id="rid"
+                class-name="i-col-4  i-warp-md-al"
+                text="name"
+                v-ref:checkbox
+              >
 
-            </i_checkbox>
+              </i_checkbox>
+            </div>
           </div>
-        </div>
-        <div class="i-row">
-          <label class="i-col-2 i-text-al-r">
-            vip
-          </label>
-          <div class="i-col-10 i-warp-none-al i-row">
-            <i_radio
-              id="rid"
-              class-name="i-warp-md-al"
-              text="name"
-              v-ref:radio
-            >
-            </i_radio>
+          <div class="i-row">
+            <label class="i-col-2 i-text-al-r">
+              vip
+            </label>
+            <div class="i-col-10 i-warp-none-al i-row">
+              <i_radio
+                id="rid"
+                class-name="i-warp-md-al"
+                text="name"
+                v-ref:radio
+              >
+              </i_radio>
+            </div>
           </div>
-        </div>
-        <div class="i-row">
-          <label class="i-col-2 i-text-al-r">
-            状态
-          </label>
-          <div class="i-col-4">
-            <i_switch_toggle
-              open="启用"
-              close="禁用"
-            >
-            </i_switch_toggle>
+          <div class="i-row">
+            <label class="i-col-2 i-text-al-r">
+              状态
+            </label>
+            <div class="i-col-4">
+              <i_switch_toggle
+                open="启用"
+                close="禁用"
+              >
+              </i_switch_toggle>
+            </div>
           </div>
-        </div>
-        <div class="i-text-al-c ">
-          <div class="i-btn-g i-in-flex">
-            <button type="button">提交</button>
-            <button type="button">取消</button>
+          <div class="i-text-al-c ">
+            <div class="i-btn-g i-in-flex">
+              <button type="button">提交</button>
+              <button type="button">取消</button>
+            </div>
           </div>
-        </div>
+        </fieldset>
       </form>
     </div>
   </div>

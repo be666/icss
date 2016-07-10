@@ -17,8 +17,20 @@ form {
     padding: @pd-sm 0;
   }
 
-  .i-checkbox,.i-radio{
+  .i-checkbox, .i-radio {
     display: inline-flex;
+  }
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    legend {
+      padding: 0 @pd-md;
+      width: 100%;
+      border-bottom: 1px solid @color-border;
+      margin-bottom: @hl-md;
+    }
   }
 }
 

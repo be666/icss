@@ -41,6 +41,10 @@
           {
             nid: "avatar",
             name: "avatar"
+          },
+          {
+            nid: "scroll",
+            name: "scroll"
           }
         ],
         moduleName: this.moduleName

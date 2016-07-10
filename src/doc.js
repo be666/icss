@@ -43,6 +43,10 @@ router.map({
           "avatar": {
             name: "avatar",
             component: require("./pages/avatar.vue")
+          },
+          "scroll": {
+            name: "scroll",
+            component: require("./pages/scroll.vue")
           }
         }
       }
