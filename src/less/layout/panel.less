@@ -7,7 +7,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 70vh;
   align-items: stretch;
   border-radius: @border-radius;
   overflow: hidden;
@@ -16,6 +16,11 @@
     flex-shrink: 0;
   }
   .i-panel-body {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .i-panel-body:last-child{
     flex-grow: 1;
     flex-shrink: 0;
   }

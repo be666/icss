@@ -29,3 +29,19 @@ nav.i_navigation {
 nav.i-slide {
 
 }
+
+nav.i-top {
+  display: inline-block;
+  ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    li {
+      padding: @pd-sm @pd-md;
+      border-bottom: 1px solid @body-bg;
+      &:hover, &.i-active {
+        background: @color-pri-hover;
+        color: @color-bg;
+      }
+    }
+  }
+}
