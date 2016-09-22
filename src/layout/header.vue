@@ -4,6 +4,11 @@
       <div class="i-col-4">
         <i_logo></i_logo>
       </div>
+      <div class="i-col-8">
+        <nav>
+
+        </nav>
+      </div>
     </div>
   </header>
 </template>
